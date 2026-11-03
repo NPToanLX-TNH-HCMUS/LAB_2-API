@@ -109,12 +109,6 @@ With the server running in one terminal, open another terminal (with the virtual
 ```bash
 client
 ```
-
-Or:
-```bash
-python -m src.client
-```
-
 The client will test `GET /`, `GET /health`, `POST /predict` with sample files in `tests/test_files/`, and error validation (`POST /predict` with no file).
 
 ---
