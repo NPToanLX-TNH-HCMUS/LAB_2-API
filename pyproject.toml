@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "LAB_2-API"
+version = "0.1.0"
+description = "Computational Thinking Lab 2 - API"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Ngo Phuoc Toan", email = "nptoan2527@clc.fitus.edu.vn" }]
+dependencies = [
+    "requests>=2.34",
+    "fastapi>=0.162",
+    "transformers[torch]",
+    "uvicorn",
+    "python-multipart",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[project.scripts]
+server = "src.server:main"
+client = "src.client:main"
