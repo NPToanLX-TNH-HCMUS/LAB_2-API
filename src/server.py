@@ -7,10 +7,10 @@ from fastapi.responses import JSONResponse
 from transformers import pipeline
 
 app = FastAPI(
-    title="Hausa ASR API",
+    title="ASR API",
     description=(
         "A REST API that exposes the Baghdad99/saad-speech-recognition-hausa-audio-to-text "
-        "Hugging Face model for automatic speech recognition (ASR) of Hausa audio."
+        "Hugging Face model for automatic speech recognition (ASR)."
     ),
     version="0.1.0",
 )
@@ -57,7 +57,7 @@ def health():
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     """
-    Receive an audio file (WAV recommended), run it through the Hausa ASR model,
+    Receive an audio file (WAV recommended), run it through the ASR model,
     and return the transcription as JSON.
 
     - **file**: Audio file to transcribe (multipart/form-data).
